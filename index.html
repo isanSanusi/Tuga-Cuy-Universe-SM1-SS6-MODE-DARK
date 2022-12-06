@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dark Mode ss6</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <a onclick="reRender()" id="home">HOME</a>
+        <a id="dark" onclick="darkMode()">
+          DARK
+        </a>
+        <a id="jomblo" onclick="jombloMode()">
+          JOMBLO
+        </a>
+        <a id="susah" onclick="susahMode()">
+          SUSAH
+        </a>
+      </nav>
+      <h1> i-Sans.net </h1>
+      <p class="info" id="info"></p>
+    </div>
+
+    <!-- itializing finction script -->
+    <script>
+    
+    // get the doc
+      let body = document.body;
+      let info = document.getElementById("info");
+      let modeDark = document.getElementById("dark");
+      let modeJomblo = document.getElementById("jomblo");
+      let modeSusah = document.getElementById("susah");
+      let home = document.getElementById("home");
+      
+      
+      // dark mode session
+      const darkLimit = 5;
+      let darkCounter = 0;
+      let darkRemainingLeft;
+      
+      function darkMode() {
+        if (darkRemainingLeft == 1) {
+          info.textContent = ` 💥 FITUR DARKMODE ANDA TELAH HABIS wkwkwk 💥 `;
+          modeDark.style.display = "none";
+          modeJomblo.style.display = "none";
+          modeSusah.style.display = "none";
+          home.textContent = `RESTART`;
+          return;
+        }
+
+        
+        darkCounter += 1;
+        darkRemainingLeft = darkLimit - darkCounter;
+        
+        // info in dark mode
+        info.textContent = `Darkmode di pakai ${darkCounter}x, tersisa ${darkRemainingLeft}`;
+        
+        if(darkRemainingLeft == 4) {
+          dark.textContent = `LIGHT`;
+        } else if (darkRemainingLeft == 3) {
+          dark.textContent = `DARK`;
+        } else if (darkRemainingLeft == 2) {
+          dark.textContent = `LIGHT`;
+        } else if (darkRemainingLeft == 1) {
+          dark.textContent = `DARK`;
+        } 
+        body.classList.toggle("dark");
+    }
+    // dark mode session end
+    
+
+    // jomblo mode session
+      const jombloLimit = 5;
+      let jombloCounter = 0;
+      let jombloRemainingLeft;
+    
+    function jombloMode() {
+      if(jombloRemainingLeft == 1) {
+        info.textContent = ` 💥 JOMBLO MODE ANDA TELAH BERAKHIR 💥 `;
+        modeDark.style.display = "none";
+        modeJomblo.style.display = "none";
+        modeSusah.style.display = "none";
+        home.textContent = `RESTART`;
+        return;
+      }
+      
+      jombloCounter += 1;
+      jombloRemainingLeft = jombloLimit - jombloCounter;
+      
+      // info in jomblo mode
+      info.textContent = `jomblo mode di pakai ${jombloCounter}x, tersisa ${jombloRemainingLeft}`;
+      
+      body.classList.toggle("jomblo");
+      
+       if(jombloRemainingLeft == 4) {
+          jomblo.textContent = `PACARAN`;
+        } else if (jombloRemainingLeft == 3) {
+          jomblo.textContent = `JOMBLO`;
+        } else if (jombloRemainingLeft == 2) {
+          jomblo.textContent = `PACARAN`;
+        } else if (jombloRemainingLeft == 1) {
+          jomblo.textContent = `JOMBLO`;
+        } 
+    }
+    // jomblo mode session end
+
+    
+    // susah mode session
+      const susahLimit = 5;
+      let susahCounter = 0;
+      let susahRemainingLeft;
+    
+    function susahMode() {
+      if(susahRemainingLeft == 1) {
+        info.textContent = ` 💥 HORE MASA SUSAH ANDA TELAH BERAKHIR 💥 `;
+        modeDark.style.display = "none";
+        modeJomblo.style.display = "none";
+        modeSusah.style.display = "none";
+        home.textContent = `RESTART`;
+        return;
+      }
+      
+      susahCounter += 1;
+      susahRemainingLeft = susahLimit - susahCounter;
+      
+      // info in susah mode
+      info.textContent = `susah mode di pakai ${susahCounter}x, tersisa ${susahRemainingLeft}`;
+      
+      body.classList.toggle("susah");
+      
+       if(susahRemainingLeft == 4) {
+          susah.textContent = `SENANG`;
+        } else if (susahRemainingLeft == 3) {
+          susah.textContent = `SUSAH`;
+        } else if (susahRemainingLeft == 2) {
+          susah.textContent = `SENANG`;
+        } else if (susahRemainingLeft == 1) {
+          susah.textContent = `SUSAH`;
+        } 
+    }
+    // suah mode session end
+    
+    
+            function reRender() {
+              location.reload();
+            }
+
+    </script>
+  </body>
+  </html>
